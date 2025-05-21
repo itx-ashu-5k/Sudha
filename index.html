@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sudha 🎂</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="sparkles"></div>
+    <div class="confetti"></div>
+    
+    <div class="card animate__animated animate__fadeIn">
+        <div class="golden-frame">
+            <img src="assets/sudha-photo.jpg" alt="Sudha's Photo" class="profile-pic">
+        </div>
+        <h1 class="animate__animated animate__bounceIn">Happy Birthday Sudha! 💖</h1>
+        
+        <p class="message animate__animated animate__fadeInUp animate__delay-1s">
+            May your day be as bright as your smile and as sweet as your heart!💗
+
+            You deserve all the happiness in the world! 🎀
+        </p>
+        
+        <p class="special-message animate__animated animate__fadeInUp animate__delay-2s">
+            "Tumhari dosti ek tohfa hai, jo har pal aur bhi keemti hota jata hai!" 💕💫
+        </p>
+
+        <div class="quote animate__animated animate__fadeInUp animate__delay-3s">
+            "A friend like you is what all people dream of,<br>
+            Your heart is pure and your smile is gold.<br>
+            Happy Birthday to the most amazing person!" 🎂💗
+        </div>
+    </div>
+
+    <div id="floating-hearts"></div>
+    
+    <audio id="birthdayMusic" preload="auto" autoplay loop playsinline muted>
+        <source src="assets/birthday-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <p class="footer animate__animated animate__fadeInUp animate__delay-4s">
+        Created ❤️ by <a href="https://www.instagram.com/itx_ashu_5k" target="_blank" id="ashish">Ashish</a>
+    </p>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Unmute audio as soon as possible
+        window.addEventListener('load', function() {
+            const audio = document.getElementById('birthdayMusic');
+            audio.muted = false;
+            audio.play();
+        });
+    </script>
+</body>
+</html>

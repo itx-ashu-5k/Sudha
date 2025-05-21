@@ -1,0 +1,233 @@
+:root {
+    --primary-color: #ff4081;
+    --secondary-color: #ffd3e0;
+    --text-color: #333;
+    --gold-gradient: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    text-align: center;
+    overflow: hidden;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.golden-frame {
+    padding: 5px;
+    border-radius: 50%;
+    background: var(--gold-gradient);
+    animation: shine 2s linear infinite;
+    margin: 20px auto;
+    width: fit-content;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.1em;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message, .special-message {
+    font-size: 1.05em;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+.quote {
+    font-style: italic;
+    color: var(--primary-color);
+    font-size: 1em;
+    margin: 25px 0;
+    padding: 20px;
+    border-top: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.footer {
+    margin-top: 30px;
+    color: white;
+    font-size: 1em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+#ashish {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    padding: 0 5px;
+}
+
+#ashish::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+#ashish:hover::after {
+    transform: scaleX(1);
+}
+
+/* Sparkles */
+#sparkles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Animations */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes shine {
+    0% { filter: brightness(100%); }
+    50% { filter: brightness(120%); }
+    100% { filter: brightness(100%); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    font-size: 17px;
+    color: var(--primary-color);
+    pointer-events: none;
+    z-index: 2;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Confetti Animation */
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: fall 3s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Music Button */
+.music-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background: var(--gold-gradient);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    animation: bounce 1s infinite;
+}
+
+.music-button:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        padding: 1.5rem;
+        margin: 15px;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 1.7em;
+    }
+
+    .message, .special-message {
+        font-size: 0.9em;
+    }
+}
